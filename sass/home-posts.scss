@@ -1,0 +1,6 @@
+@import "mix-in";
+
+.home-posts
+{
+  @include font-size(2.2);
+}

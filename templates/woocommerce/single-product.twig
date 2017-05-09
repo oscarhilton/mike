@@ -1,0 +1,29 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+<ul>
+  <li>{{product.get_title()}}</li>
+  <li>{{product.is_in_stock()}}</li>
+  <li>
+    {% if product.is_on_sale() %}
+    <span>
+        {{product.get_price()}}
+    </span>
+    <span>
+        {{product.get_sale_price()}}
+    </span>
+    {% else %}
+    <span>
+        {{product.get_price()}}
+    </span>
+    {% endif %}
+  </li>
+  <li>{{product.the_excerpt()}}</li>
+
+
+</ul>
+
+<pre>{{dump(product)}}</pre>
+
+{% endblock %}

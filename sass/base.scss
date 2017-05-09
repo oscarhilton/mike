@@ -1,0 +1,15 @@
+@font-face {
+    font-family: pressura;
+    src: url("../fonts/gt-pressura-light.ttf");
+}
+
+body, html
+{
+  font-family: pressura
+}
+
+#content
+{
+  margin-left: 200px;
+  margin-right: 200px;
+}

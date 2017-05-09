@@ -1,0 +1,26 @@
+<div class="wrapper">
+  {% set cart = function('get_cart_products')%}
+  <div class="cart-products {% if cart|length > 2 %}list {% elseif cart|length == 2 %}side-by-side {% else %}single {% endif %}">
+    {% if cart is empty %}
+    Your cart is empty
+    {% else %}
+    {% for product in cart %}
+    <div class="product" data-name="{{product.name}}">
+      <div class="image-container">
+        <!-- <img src="{{ product.thumbnail }}" /> -->
+      </div>
+      <div class="details-container">
+        <span class="title">{{ product.name }}</span>
+        <span class="quantity-container">QTY: <span class="quantity">{{ product.quantity }}</span></span>
+        <span class="price">£{{ product.price }}</span>
+        <span class="btn remove-item" data-id="{{ product.id }}" data-url="{{ function('get_ajax_page') }}">Remove</span>
+      </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+  </div>
+  <div class="cart-total">
+    <span class="total">Total:</span>
+    {{ function('get_cart_total') }}
+  </div>
+</div>

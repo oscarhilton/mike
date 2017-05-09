@@ -1,0 +1,12 @@
+{% extends "base.twig" %}
+
+{% block content %}
+		{% include ['hero-image.twig'] %}
+		<div class="home-posts">
+			{% for article in news %}
+			<h2>{{article.title}}</h2>
+			<span>{{article.post_date|date}}</span>
+			<p>{{article.post_content}}</p>
+			{% endfor %}
+		</div>
+{% endblock %}

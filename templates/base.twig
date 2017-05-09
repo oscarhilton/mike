@@ -1,0 +1,51 @@
+{% block html_head_container %}
+
+{% include 'html-header.twig' %}
+	{% block head %}
+	{% endblock %}
+	</head>
+{% endblock %}
+
+	<body class="{{body_class}}" data-template="base.twig">
+		<header class="header" >
+			{% block header %}
+				<div class="wrapper">
+					<a class="hdr-logo-link" href="{{site.url}}" rel="home"><img src="{{ logo }}" alt="{{site.title}}"/></a>
+					<nav id="nav-main" class="nav-main" role="navigation">
+						{% include "menu.twig" with {'menu': menu.get_items} %}
+					</nav><!-- #nav -->
+				</div>
+				<div class="bag">
+					{% include 'bag.twig' %}
+				</div>
+			{% endblock %}
+			<div class="categories">
+				<ul>
+				{% for cat in categories %}
+					<li>
+						<a href="{{cat.link}}">
+							{{cat.title}}
+						</a>
+					</li>
+				{% endfor %}
+				</ul>
+			</div>
+		</header>
+
+		<section id="content" role="main" class="content-wrapper">
+			{% if title %}<h1>{{title}}</h1>{% endif %}
+			<div class="wrapper {{sidebar_class}}">
+				{% block content %}
+					I have no content to show at this current time.
+				{% endblock %}
+			</div>
+		</section>
+
+		{% block footer %}
+			<footer id="footer">
+				{% include 'footer.twig' %}
+			</footer>
+			{{ function('wp_footer') }}
+		{% endblock %}
+	</body>
+</html>
