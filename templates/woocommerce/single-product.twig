@@ -4,7 +4,6 @@
 
 <ul>
   <li>{{product.get_title()}}</li>
-  <li>{{product.is_in_stock()}}</li>
   <li>
     {% if product.is_on_sale() %}
     <span>
@@ -15,15 +14,29 @@
     </span>
     {% else %}
     <span>
-        {{product.get_price()}}
+        £{{product.get_price()}}
     </span>
     {% endif %}
   </li>
-  <li>{{product.the_excerpt()}}</li>
-
-
+  <!-- <li>{{product.get_description()}}</li> -->
+  <li>
+      <span>Editions</span>
+      <span>{{post.editions}}</span>
+  </li>
+  <li>
+      <span>Paper weight</span>
+      <span>{{post.paper_weight}}</span>
+  </li>
+  <li>
+      <span>Stock size</span>
+      <span>{{post.stock_size_h}} x {{post.stock_size_w}}</span>
+  </li>
+  <li>
+    {% if product.is_in_stock() %}
+    in stock
+    {% else %}
+    not in stock
+    {% endif %}
 </ul>
-
-<pre>{{dump(product)}}</pre>
 
 {% endblock %}

@@ -19,16 +19,19 @@
 					{% include 'bag.twig' %}
 				</div>
 			{% endblock %}
-			<div class="categories">
-				<ul>
-				{% for cat in categories %}
-					<li>
-						<a href="{{cat.link}}">
-							{{cat.title}}
-						</a>
-					</li>
-				{% endfor %}
-				</ul>
+			<div class="cateogry-container">
+				<span id="categories-button">Categories</span>
+				<div class="categories">
+					<ul>
+					{% for cat in categories %}
+						<li>
+							<a href="{{cat.link}}">
+								{{cat.title}}
+							</a>
+						</li>
+					{% endfor %}
+					</ul>
+				</div>
 			</div>
 		</header>
 
@@ -38,6 +41,15 @@
 				{% block content %}
 					I have no content to show at this current time.
 				{% endblock %}
+			</div>
+		</section>
+		<section id="posts">
+			<div class="home-posts">
+				{% for article in news %}
+				<h2>{{article.title}}</h2>
+				<span>{{article.post_date|date}}</span>
+				<p>{{article.post_content}}</p>
+				{% endfor %}
 			</div>
 		</section>
 

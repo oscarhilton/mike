@@ -31,6 +31,7 @@ class TapeSite extends TimberSite {
 		add_action( 'wp_ajax_add_product_to_cart', array( $this, 'prefix_ajax_add_product_to_cart' ) );
 		add_action( 'wp_ajax_nopriv_add_product_to_cart', array( $this, 'prefix_ajax_add_product_to_cart' ) );
 		add_action( 'wp_ajax_remove_cart_item', array( $this, 'prefix_ajax_remove_cart_item' ) );
+		add_action( 'wp_ajax_page_link', array( $this, 'prefix_ajax_page_link' ) );
 		add_action( 'wp_ajax_nopriv_remove_cart_item', array( $this, 'prefix_ajax_remove_cart_item' ) );
 		if( function_exists('acf_add_options_page') ) {
 			acf_add_options_page();
@@ -75,6 +76,15 @@ class TapeSite extends TimberSite {
 				}
 
 				return $twig;
+	}
+
+	function prefix_ajax_page_link(){
+
+		$response = 'foo';
+
+		echo json_encode($response);
+
+		die();
 	}
 
 	function prefix_ajax_remove_cart_item(){

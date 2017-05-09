@@ -78,6 +78,50 @@ jQuery( document ).ready( function( $ ) {
     $('.bag').removeClass('show');
   })
 
+  // $(document).on('click', 'a', function(e){
+  //   e.preventDefault();
+  //   var url = $(this).attr("href");
+  //
+  //   console.log(url);
+  //
+  //   $.ajax({
+  //      cache: false,
+  //      type: 'POST',
+  //      url: url,
+  //      data: {
+  //         'action': 'get_post'
+  //      },
+  //      dataType: 'JSON',
+  //      success: function (response) {
+  //        console.log(response);
+  //      },
+  //      error: function (XMLHttpRequest, status, error) {
+  //        console.log(error);
+  //      }
+  //    });
+  // })
+
+  $('#categories-button').on('click', function(){
+    $(this).siblings('.categories').toggleClass('show');
+  })
+
+  $('.product-link a').on('mouseover', function(){
+    var title = $(this).data('title');
+    $('.product-thumb').each(function(){
+      if( $(this).data('title') == title ){
+        $(this).addClass('hover');
+      }
+    })
+  })
+  $('.product-link a').on('mouseout', function(){
+    var title = $(this).data('title');
+    $('.product-thumb').each(function(){
+      if( $(this).data('title') == title ){
+        $(this).removeClass('hover');
+      }
+    })
+  })
+
   $('.bag').on('click', '.remove-item', function(){
     var id = $(this).data('id');
     var url = $(this).data('url');

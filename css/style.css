@@ -3,11 +3,92 @@
   src: url("../fonts/gt-pressura-light.ttf"); }
 
 body, html {
-  font-family: pressura; }
+  font-family: pressura;
+  padding: 0;
+  margin: 0; }
+
+a {
+  color: inherit;
+  text-decoration: none; }
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none; }
 
 #content {
-  margin-left: 200px;
-  margin-right: 200px; }
+  height: 100vh;
+  position: relative; }
+
+.product-links {
+  width: 30%; }
+  .product-links a {
+    font-size: 18px;
+    font-size: 1.8rem; }
+
+.product-previews {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 70%;
+  pointer-events: none;
+  z-index: -1;
+  background: #f3f3f3; }
+  .product-previews ul {
+    position: relative;
+    width: 100%;
+    height: 100%; }
+    .product-previews ul li {
+      position: absolute;
+      opacity: 0;
+      transition: opacity 0.4s;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      margin: auto;
+      max-width: 70%;
+      max-height: 80vh; }
+      .product-previews ul li img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; }
+      .product-previews ul li.hover {
+        opacity: 1; }
+
+header.header {
+  position: fixed;
+  z-index: 10;
+  background: red; }
+  header.header .categories {
+    pointer-events: none;
+    opacity: 0;
+    position: fixed;
+    background: blue;
+    color: white;
+    font-size: 20px;
+    font-size: 2rem;
+    z-index: 9;
+    display: table;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.3s; }
+    header.header .categories.show {
+      opacity: 1; }
+    header.header .categories ul {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+      width: 100%; }
+  header.header .bag {
+    position: fixed;
+    bottom: 0;
+    right: 0; }
 
 .home-posts {
   font-size: 22px;

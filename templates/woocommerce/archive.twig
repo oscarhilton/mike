@@ -2,11 +2,21 @@
 
 {% block content %}
 
-    <div>
+    <div class="product-links">
       <ul>
           {% for product in products %}
-          <li>
-              <a href="{{product.link}}">{{product.title}}</a>
+          <li class="product-link">
+              <a href="{{product.link}}" data-title="{{product.title}}">{{product.title}}</a>
+          </li>
+          {% endfor %}
+      </ul>
+    </div>
+
+    <div class="product-previews">
+      <ul>
+          {% for product in products %}
+          <li class="product-thumb" data-title="{{product.title}}">
+              <img src="{{product.thumbnail.src}}" />
           </li>
           {% endfor %}
       </ul>
