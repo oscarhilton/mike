@@ -21,7 +21,7 @@
 			{% endblock %}
 			<div class="cateogry-container">
 				<span id="categories-button">Categories</span>
-				<div class="categories">
+				<div class="categories show">
 					<ul>
 					{% for cat in categories %}
 						<li>
@@ -36,7 +36,6 @@
 		</header>
 
 		<section id="content" role="main" class="content-wrapper">
-			{% if title %}<h1>{{title}}</h1>{% endif %}
 			<div class="wrapper {{sidebar_class}}">
 				{% block content %}
 					I have no content to show at this current time.

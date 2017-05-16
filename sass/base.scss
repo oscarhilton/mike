@@ -3,6 +3,14 @@
     src: url("../fonts/gt-pressura-light.ttf");
 }
 
+pre
+{
+  background: white;
+  position: absolute;
+  top: 0;
+  z-index: 999999;
+}
+
 body, html
 {
   font-family: pressura;

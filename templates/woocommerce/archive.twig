@@ -2,6 +2,7 @@
 
 {% block content %}
 
+
     <div class="product-links">
       <ul>
           {% for product in products %}
@@ -20,6 +21,12 @@
           </li>
           {% endfor %}
       </ul>
+    </div>
+
+    <div class="category-description">
+      <span>{{category.description}}</span>
+
+      <div class="background" style="background: url({{category.thumbnail}})"></div>
     </div>
 
 {% endblock %}

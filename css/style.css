@@ -2,6 +2,12 @@
   font-family: pressura;
   src: url("../fonts/gt-pressura-light.ttf"); }
 
+pre {
+  background: white;
+  position: absolute;
+  top: 0;
+  z-index: 999999; }
+
 body, html {
   font-family: pressura;
   padding: 0;
@@ -21,20 +27,47 @@ ul {
   position: relative; }
 
 .product-links {
-  width: 30%; }
+  width: 30%;
+  background: #68CCB6;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  color: white;
+  display: table; }
+  .product-links ul {
+    display: table-cell;
+    vertical-align: middle; }
+    .product-links ul li {
+      margin-left: 10%; }
   .product-links a {
-    font-size: 18px;
-    font-size: 1.8rem; }
+    font-size: 1.2vw; }
 
+.category-description,
 .product-previews {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   width: 70%;
-  pointer-events: none;
-  z-index: -1;
-  background: #f3f3f3; }
+  pointer-events: none; }
+
+.category-description {
+  display: table;
+  width: 70%;
+  height: 100%;
+  text-align: center;
+  z-index: 1; }
+  .category-description span {
+    width: 100%;
+    vertical-align: middle;
+    display: table-cell;
+    text-align: center; }
+
+.product-previews {
+  background: #f3f3f3;
+  z-index: 1; }
   .product-previews ul {
     position: relative;
     width: 100%;
@@ -64,27 +97,29 @@ header.header {
   header.header .categories {
     pointer-events: none;
     opacity: 0;
+    transform: translateX(-100%);
     position: fixed;
-    background: blue;
+    background: #4ECDC4;
     color: white;
-    font-size: 20px;
-    font-size: 2rem;
-    z-index: 9;
+    z-index: -1;
     display: table;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-    width: 100%;
+    width: 30%;
     height: 100%;
-    transition: opacity 0.3s; }
+    transition: opacity 0.3s, transform 0.5s; }
     header.header .categories.show {
-      opacity: 1; }
+      opacity: 1;
+      pointer-events: all;
+      transform: translateX(0); }
     header.header .categories ul {
       display: table-cell;
       vertical-align: middle;
-      text-align: center;
-      width: 100%; }
+      text-align: left;
+      width: 100%;
+      padding-left: 10%; }
   header.header .bag {
     position: fixed;
     bottom: 0;
